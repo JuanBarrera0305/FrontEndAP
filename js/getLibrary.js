@@ -11,7 +11,7 @@ new gridjs.Grid({
       { name: "bookname", width: "200px" } ],
 
     server: {
-      url: "https://apiap.onrender.com/api/v1/Library/",
+      url: "https://apiap-1.onrender.com/api/v1/library",
       then: (data) => {
           data.sort((a,b) => b.id - a.id);
           return data.map((book) => [
