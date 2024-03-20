@@ -4,12 +4,8 @@ formEl.addEventListener('submit', event => {
     event. preventDefault ();
     const formData = new FormData(formEl);
     const data = Object.fromEntries(formData);
-    if(data.id == "" || data.booktype == ""|| data.bookname == ""){
-        $.toaster({ priority : 'danger', title : 'Error', message : "Oops something went wrong"})
-    }
-    else {
         fetch('http://localhost:8004/api/v1/Library',{
-            method: 'POST',
+            method: 'PUT',
             headers:{
                'Content-Type': 'application/json'
        },
@@ -20,10 +16,4 @@ formEl.addEventListener('submit', event => {
     $.toaster({ priority : 'success', title : 'Library', message : "Yessir it worked"})
 
     } 
-});
-
-//for library update
-
-
-
-
+);
