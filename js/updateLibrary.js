@@ -4,7 +4,8 @@ formEl.addEventListener('submit', event => {
     event. preventDefault ();
     const formData = new FormData(formEl);
     const data = Object.fromEntries(formData);
-        fetch('http://localhost:8004/api/v1/Library',{
+        fetch('https://apiap-1.onrender.com/api/v1/library  ',{
+            //iflocallyuse:http://localhost:8004/api/v1/library
             method: 'PUT',
             headers:{
                'Content-Type': 'application/json'

@@ -5,16 +5,15 @@ formEl.addEventListener('submit', event => {
     const formData = new FormData(formEl);
     const data = Object.fromEntries(formData);
     if(data.id == "" || data.booktype == ""|| data.bookname == ""){
-        $.toaster({ priority : 'danger', title : 'Error', message : "Oops something went wrong"})
+        $.toaster({ priority : 'danger', title : 'Error', message : "Oops something went not right indeed"})
     }
     else {
-        fetch('https://apiap-1.onrender.com/api/v1/library ',{
-               //iflocallyuse:http://localhost:8004/api/v1/library
+        fetch('https://apiap-1.onrender.com/api/v1/library',{
             method: 'POST',
             headers:{
-               'Content-Type': 'application/json'
-       },
-      body: JSON.stringify(data)
+                'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
     }).then(res => res.json())
     .then(data => console.log(data))
     .then(error => console.log(error))
@@ -23,7 +22,7 @@ formEl.addEventListener('submit', event => {
     } 
 });
 
-//for library update
+//iflocallyuse:http://localhost:8004/api/v1/library
 
 
 
